@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ZSR Home</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/bootstrap.css'})}"
+        href="/assets/css/bootstrap.css"/>
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/font-awesome.min.css'})}"
+        href="/assets/css/font-awesome.min.css"/>
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/sl-slide.css'})}" href="/assets/css/sl-slide.css"/>
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/main.css'})}" href="/assets/css/main.css"/>
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/menu-list.css'})}"
+        href="/assets/css/menu-list.css"/>
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/footer.css'})}" href="/assets/css/footer.css"/>
+  <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/override.css'})}"/>
+  <script data-th-src="${portal.assetUrl({'_path=js/vendor/modernizr-2.6.2-respond-1.1.0.min.js'})}"
+          src="/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+<!-- Page header and menu -->
+<header class="navbar navbar-expand-lg navbar-light bg-light"
+        data-th-style="${'background: #022e7f url(' + background + ') center / cover no-repeat !important'}">
+  <div class="brand-container">
+    <a class="navbar-brand" href="/" data-th-href="${siteUrl}">
+      <img data-th-src="${logo}" alt=""/>
+    </a>
+  </div>
+  <div class="navigation-container">
+    <div data-portal-region="navigation">
+      <div data-th-if="${navigationRegion}" data-th-each="component : ${navigationRegion.components}"
+           data-th-remove="tag">
+        <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row title-text">
+    <h1 data-th-text="${breadcrumbTitle}"></h1>
+  </div>
+</header>
+
+<!-- Page breadcrumb and title bar -->
+<section class="title" data-th-if="${!showTitle}">
+  <div class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb float-left">
+          <li data-th-each="item : ${breadcrumbs.items}" data-th-class="'breadcrumb-item' +
+							  ${item.active ? ' active' : ''}
+						 ">
+            <a href="/" data-th-if="${item.url}" data-th-href="${item.url}" data-th-text="${item.text}">Home</a>
+            <span data-th-unless="${item.url}" data-th-text="${item.text}" data-th-remove="tag">Home</span>
+            <div data-th-remove="tag" data-th-if="${breadcrumbs.divider} and !${iterStat.last}"
+                 data-th-utext="${breadcrumbs.divider}"></div>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- Main body -->
+<div data-portal-region="main">
+  <div data-th-if="${mainRegion}" data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
+    <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+  </div>
+</div>
+
+<script data-th-src="${portal.assetUrl({'_path=js/vendor/jquery-3.1.1.min.js'})}"
+        src="/assets/js/vendor/jquery-3.1.1.min.js"></script>
+<script data-th-src="${portal.assetUrl({'_path=js/bootstrap.min.js'})}" src="/assets/js/bootstrap.min.js"></script>
+<script data-th-src="${portal.assetUrl({'_path=js/jquery.ba-cond.min.js'})}"
+        src="/assets/js/jquery.ba-cond.min.js"></script>
+<script data-th-src="${portal.assetUrl({'_path=js/jquery.slitslider.js'})}"
+        src="/assets/js/jquery.slitslider.js"></script>
+<script data-th-src="${portal.assetUrl({'_path=js/slider.js'})}" src="/assets/js/slider.js"></script>
+<script data-th-src="${portal.assetUrl({'_path=js/twitter-bootstrap-hover-dropdown.min.js'})}"
+        src="/assets/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+<script data-th-src="${portal.assetUrl({'_path=js/main.js'})}" src="/assets/js/main.js"></script>
+</body>
+</html>

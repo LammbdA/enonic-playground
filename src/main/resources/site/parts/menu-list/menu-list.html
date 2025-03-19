@@ -1,0 +1,14 @@
+<nav class="main-menu" data-th-style="${'background-color:' + menuBackground}">
+  <ul data-th-if="${menuItems}">
+    <li data-th-each="menuItem : ${menuItems}">
+      <a data-th-href="${menuItem.btnUrl}" data-th-text="${menuItem.itemName}"
+         data-th-style="${'color:' + textColor}"></a>
+      <ul data-th-if="${menuItem.subItems}">
+        <li data-th-each="subItem : ${menuItem.subItems}">
+          <a data-th-href="${subItem.btnUrl}" data-th-text="${subItem.subItemName}"
+             data-th-style="${'color:' + subItemTextColor}"></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,9 @@
+<page>
+  <display-name>ZSR Home</display-name>
+  <description>Main landing page template</description>
+  <form/>
+  <regions>
+    <region name="navigation"/>
+    <region name="main"/>
+  </regions>
+</page>

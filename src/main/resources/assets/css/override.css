@@ -1,0 +1,381 @@
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+html {
+	width: 100vw;
+}
+
+body div section {
+	padding: 50px 0 0 0;
+}
+#slide-show{
+	padding : 0;
+}
+.button{
+    margin: 50px 0;
+}
+.contactInfo{
+	padding-left: 10px;
+}
+.thumbnail{
+	border: none;
+}
+.address{
+	padding-left: 0;
+}
+.icon-medium{
+	width: auto;
+}
+
+
+
+/* General font-size for this theme is smaller when used with Bootstrap 3, increase the size a bit */
+body {
+	font-size: 14px;
+}
+ol.breadcrumb {
+	background-color: transparent;
+}
+ol.breadcrumb > li > a,
+.breadcrumb-item + .breadcrumb-item::before{
+	content: ">";
+	color: #464646;
+}
+ol.breadcrumb > li {
+	opacity: 1;
+}
+ol.breadcrumb > li:hover {
+	opacity: 0.8;
+}
+ol.breadcrumb > li.active {
+	color: #000;
+	opacity: 0.8;
+}
+/* Properly re-space heading one inside the title header block, broken when Bootstrap 3 was introduced. */
+.title h1 {
+	margin: 12px 0;
+}
+/* We've removed an empty p-tag from original theme used to add spacing after icon, adding it to heading instead. */
+.services .center h4 {
+	margin-top: 10px;
+}
+/* The transparent button inside the slider is too small in Bootstrap 3, increase its size. */
+.sl-slider-wrapper .sl-slide-inner .btn-large {
+	font-size: 20px;
+}
+/* Part button adds button that are too small in Bootstrap 3, unless this font-change is applied. */
+.button .btn-large {
+  font-size: 20px;
+}
+/* Needed for allowing headings to be written in any case in config. */
+#bottom h4 {
+	text-transform: uppercase;
+}
+/* In our app, one can add only link (no preview) for a portfolio item, then the design doesn't properly center this link. */
+ul.gallery li .preview .links {
+	text-align: center;
+}
+/* Images float over the edges of each box, stop that or phablets will look ugly. */
+.portfolio .gallery .preview img {
+	max-width: 100%;
+	width: 100%;
+}
+
+/* Spacing on phablets for portfolio gallery. */
+ul.gallery li .desc {
+	margin: 15px 0;
+}
+ul.gallery li .preview {
+	margin: 0;
+}
+ul.gallery li {
+	padding: 10px;
+}
+/* Modal images */
+.portfolio .modal .modal-body img {
+	width: 100%;
+	max-height: 400px;
+}
+/* Close button for modal images. */
+.portfolio .modal .close {
+	opacity: 1;
+	text-shadow: none;
+	background-color: transparent;
+}
+	.portfolio .modal .modal-close {
+		color: #3b4149;
+		right: -8px;
+		top: -8px;
+		z-index: 2;
+		font-size: 1.2em;
+		background-color: white;
+		border-radius: 50%;
+		padding: 6px;
+		overflow: hidden;
+		width: auto;
+		height: auto;
+	}/*
+	.portfolio .modal .icon-remove {
+		background-color: transparent;
+	}*/
+.layout-col-1 section {
+	padding-bottom: 50px;
+}
+/* Footer looks odd with it's margins on phablets unless the paddings are adjusted. */
+#bottom {
+	padding: 50px 0 30px 0;
+}
+	#bottom .col-md-3,
+	#bottom .col-md-6 {
+		padding-bottom: 20px;
+	}
+
+.dropdown-menu .dropdown-item {
+	font-family: "Fjalla One", sans-serif;
+	color: rgb(0, 0, 0);
+	background-color: transparent;
+	opacity: 0.5;
+}
+.dropdown-menu .dropdown-item:hover {
+	opacity: 0.7;
+}
+.dropdown-menu .dropdown-item.active {
+	opacity: 0.9;
+}
+
+/* Old theme CSS and new bootstrap doesn't color hover in menu sub levels properly. */
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+	color: #ffffff;
+}
+/* Old theme doesn't color "in-path" class, but we want to add that feature. */
+header.navbar .nav > li.in-path > a,
+header.navbar .nav > li.in-path > a:hover {
+	background: transparent;
+	color: #2dcc70;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+/* Nav toggler (small screens) */
+.navbar-default  .navbar-toggle {
+	border: none;
+}
+	.navbar-default .navbar-toggle .icon-bar {
+		width: 35px;
+		height: 5px;
+		background-color: #333;
+		margin: 6px 0;
+		transition: 0.4s;
+		display: block;
+	}
+	/* Rotate first bar */
+	.navbar-toggle:not(.collapsed) .icon-bar:nth-child(1) {
+		-webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+		transform: rotate(-45deg) translate(-9px, 6px) ;
+	}
+	/* Fade out the second bar */
+	.navbar-toggle:not(.collapsed) .icon-bar:nth-child(2) {
+		opacity: 0;
+	}
+	/* Rotate last bar */
+	.navbar-toggle:not(.collapsed) .icon-bar:nth-child(3) {
+		-webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+		transform: rotate(45deg) translate(-8px, -8px) ;
+	}
+/* Fix issues with too big brand images. */
+.navbar-default .navbar-brand {
+	height: auto;
+	padding: 0 15px; /* As all other elements in Bootstrap */
+}
+	.navbar-default .navbar-brand img {
+		max-width: 220px;
+		max-height: 80px;
+	}
+@media (max-width: 768px) {
+	.navbar-default .navbar-brand {
+		padding: 0;
+	}
+	.navbar-default .navbar-toggle {
+		margin-right: 0;
+	}
+}
+
+/* Replace the hard coded .gap elements used in original theme. Only CSS needed! Also fixes improved design on smaller screens. */
+#services .row {
+	margin-bottom: 50px;
+}
+#services .row:last-child {
+	margin-bottom: 0px;
+}
+@media (max-width: 992px) {
+	#services .row {
+		margin-bottom: 0px;
+	}
+	#services .col-md-4 {
+		padding-bottom: 2em;
+	}
+}
+
+/* Articles - list */
+.p_article-list {
+	padding: 0;
+}
+.p_article-list .article-list {
+	list-style-type: none;
+	padding: 20px 0;
+	margin: 0;
+}
+	.p_article-list .article-list li,
+	.p_article-list .media-body {
+		padding: 1rem;
+		transition: background-color 300ms linear;
+	}
+	.p_article-list .article-list li:hover,
+	.p_article-list .media-body:hover {
+		background-color: hsla(41.9, 32.5%, 68%, 0.4);
+	}
+		.p_article-list .article-list p {
+			margin: 0;
+		}
+		.p_article-list .article-list a,
+		.p_article-list .media-body a {
+			color: #34495e;
+		}
+			.p_article-list .article-list a:hover,
+			.p_article-list .media-body a:hover {
+				color: #34495e;
+			}
+
+/* Remove link around partner logos, updating CSS to reflect new DOM. */
+.thumbnail .img-circle {
+	display: block;
+	max-width: 50%;
+	height: auto;
+}
+
+.row.thumbnail {
+	margin: 0;
+	padding-top: 10px;
+}
+
+/* Articles - Single view */
+.p_article-show {
+	padding: 2em 0;
+}
+	.p_article-show .preface {
+		font-weight: 400;
+		font-size: 1.9rem;
+		font-style: italic;
+		margin-bottom: 2rem;
+	}
+	.p_article-show figure {
+		padding: 20px;
+	}
+	.p_article-show .header-graphics {
+		padding: 0;
+		margin-bottom: 2rem;
+		max-width: 100%;
+		position: relative;
+	}
+	.p_article-show .header-graphics img {
+		max-width: 100%;
+	}
+	.p_article-show .header-graphics figcaption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: hsla(1,100%,100%,0.75);
+		display: block;
+		width: 100%;
+		padding: 6px 10px;
+		color: black;
+	}
+	.p_article-show .published,
+	.p_article-show .author {
+		padding-top: 20px;
+		font-style: italic;
+		clear: both;
+	}
+	.p_article-show .author {
+		padding-top: 0;
+	}
+
+/* Employee list has no bottom spacing */
+#about-us {
+	padding-bottom: 50px;
+}
+/* Make sure employee profile pictures doesn't flow over the containing box */
+#about-us .box img {
+	max-width: 100%;
+	min-width: 100%;
+}
+
+/* Bottom spacing on front page */
+#services, .portfolio, #clients {
+	padding-bottom: 50px;
+}
+
+/* Remove gap element */
+.portfolio .center {
+	padding-bottom: 20px;
+}
+/* Problems with smaller logos */
+header.navbar {
+	min-height: 80px;
+	align-items: center; /* vertically */
+	display: flex;
+}
+@media (min-width: 768px) {
+	header.navbar {
+		padding: 0 4rem;
+	}
+}
+@media (max-width: 768px) {
+	.navbar-default .navbar-brand img {
+		max-width: 220px;
+	}
+	.navbar-default .container {
+		display: block !important;
+	}
+
+	.dropdown-menu {
+		background-color: transparent;
+		border: none;
+	}
+
+}
+
+@media (min-width: 992px) {
+
+	.dropdown-menu {
+		left: unset;
+		right: 0;
+	}
+}
+
+/* Some things are just not meant for small screens. Like stacked elements separated with a light hr. */
+@media (max-width: 992px) {
+	.services hr {
+		display: none;
+	}
+	.services .col-md-4 {
+		padding-bottom: 20px;
+	}
+	.navbar-default .navbar-brand img {
+		max-width: 150px;
+	}
+	.navbar-default .container {
+		align-items: center;
+		display: flex;
+	}
+	header.navbar .nav {
+		margin-top: 0;
+	}
+}

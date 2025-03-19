@@ -1,0 +1,56 @@
+.main-menu {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-menu li {
+    position: relative;
+}
+
+.main-menu > ul > li {
+    margin-right: 20px;
+}
+
+.main-menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.main-menu ul ul li {
+    white-space: nowrap;
+    padding: 5px 15px;
+    position: relative;
+}
+
+/* Add blue bullet points */
+.main-menu ul ul li a::before {
+    content: "•";
+    color: blue;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Hover effect for sub-items */
+.main-menu ul ul li:hover {
+    background: yellow;
+    border-radius: 10px;
+}
+
+/* Ensure submenu appears on hover */
+.main-menu li:hover > ul {
+    display: block;
+}

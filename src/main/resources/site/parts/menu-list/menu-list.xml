@@ -1,0 +1,40 @@
+<part>
+    <display-name>Menu List</display-name>
+    <description>Configure the main menu items and their sub-items.</description>
+    <form>
+        <input name="menuBackground" type="TextLine">
+            <label>Menu background</label>
+            <occurrences minimum="1" maximum="1"/>
+        </input>
+        <input name="textColor" type="TextLine">
+            <label>Menu text color</label>
+            <occurrences minimum="1" maximum="1"/>
+        </input>
+        <input name="subItemTextColor" type="TextLine">
+            <label>Menu sub item text color</label>
+            <occurrences minimum="1" maximum="1"/>
+        </input>
+        <item-set name="menuItems">
+            <label>Menu Items</label>
+            <occurrences minimum="1" maximum="10"/>
+            <items>
+                <input name="itemName" type="TextLine">
+                    <label>Menu Item Name</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <mixin name="links"/>
+                <item-set name="subItems">
+                    <label>Menu Sub Items</label>
+                    <occurrences minimum="1" maximum="10"/>
+                    <items>
+                        <input name="subItemName" type="TextLine">
+                            <label>Menu Sub Item Name</label>
+                            <occurrences minimum="1" maximum="1"/>
+                        </input>
+                        <mixin name="links"/>
+                    </items>
+                </item-set>
+            </items>
+        </item-set>
+    </form>
+</part>

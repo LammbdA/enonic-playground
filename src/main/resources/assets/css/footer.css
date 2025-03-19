@@ -1,0 +1,36 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 2rem;
+    background: #f8f9fa;
+}
+
+.footer-column h4 {
+    color: #000;
+    font-size: 150%;
+    font-weight: 500;
+    border-bottom: 4px solid #ffe800;
+    padding: 0 0 17px 0;
+    line-height: 100%;
+}
+
+.footer-column ul {
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    transition: all 0.3s ease;
+    color: #575757;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: none;
+    color: #0074cd;
+}

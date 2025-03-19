@@ -1,3 +1,27 @@
 <!-- Delete this file if you are building a web app -->
 <site>
+    <form>
+        <field-set name="company">
+            <label>Your company</label>
+            <items>
+                <input type="ImageSelector" name="logo">
+                    <label>Company logo</label>
+                    <occurrences minimum="1" maximum="1"/>
+                    <help-text>Add your company logo. Used in the header on all pages.</help-text>
+                    <config>
+                        <allowPath>${site}/*</allowPath>
+                    </config>
+                </input>
+                <input type="ImageSelector" name="background">
+                    <label>Background image</label>
+                    <occurrences minimum="1" maximum="1"/>
+                    <help-text>Add your background image. Used in the header on all pages.</help-text>
+                    <config>
+                        <allowPath>${site}/*</allowPath>
+                    </config>
+                </input>
+            </items>
+        </field-set>
+    </form>
+    <x-data name="menu-item"/>
 </site>
