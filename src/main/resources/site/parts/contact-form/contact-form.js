@@ -2,6 +2,7 @@ var libs = {
   portal: require('/lib/xp/portal'),
   thymeleaf: require('/lib/thymeleaf'),
   content: require('/lib/xp/content'),
+  translation: require('/lib/xp/i18n'),
   util: require('/lib/util'),
 }
 var view = resolve('contact-form.html')
@@ -30,8 +31,14 @@ exports.post = function (req) {
 
 exports.get = function (req) {
   var component = libs.portal.getComponent()
+  var content = libs.portal.getContent()
 
-  var model = {}
+  const contactFormLabel = libs.translation.localize({
+    key: 'contact.form.label',
+    locale: content.language,
+  })
+
+  var model = { contactFormLabel }
 
   return { body: libs.thymeleaf.render(view, model) }
 }

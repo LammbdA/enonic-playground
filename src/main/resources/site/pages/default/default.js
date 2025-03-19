@@ -63,6 +63,13 @@ exports.get = function (req) {
     path: site._path,
   })
 
+  // TODO: Redirect to selected language
+  var languageRedirectUrl = ''
+  var siteLanguage = ''
+  if (content.language) {
+
+  }
+
   var model = {
     logo: logo,
     background: background,
@@ -71,12 +78,15 @@ exports.get = function (req) {
     showTitle: showTitle,
     pageTitle: content.displayName + ' | ' + site.displayName,
     breadcrumbTitle: content.displayName,
+    languageRedirectUrl,
+    siteLanguage,
     breadcrumbs: breadcrumbs,
     mainRegion: mainRegion,
-    navigationRegion: navigationRegion
+    navigationRegion: navigationRegion,
   }
 
   return {
     body: libs.thymeleaf.render(view, model),
+    header: { 'content-language': content.language },
   }
 }
