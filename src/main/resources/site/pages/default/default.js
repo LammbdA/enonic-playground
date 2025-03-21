@@ -63,11 +63,16 @@ exports.get = function (req) {
     path: site._path,
   })
 
-  // TODO: Redirect to selected language
+  var componentUrl = libs.portal.componentUrl()
   var languageRedirectUrl = ''
   var siteLanguage = ''
-  if (content.language) {
 
+  if (componentUrl.indexOf('/zsr-en/') !== -1) {
+    siteLanguage = 'Slovencina'
+    languageRedirectUrl = componentUrl.replace('/zsr-en/', '/zsr/')
+  } else if (componentUrl.indexOf('/zsr/') !== -1) {
+    siteLanguage = 'English'
+    languageRedirectUrl = componentUrl.replace('/zsr/', '/zsr-en/')
   }
 
   var model = {

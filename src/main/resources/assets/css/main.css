@@ -295,7 +295,18 @@ header #logo {
     background: no-repeat 0 50%
 }
 
+.switch-language a {
+    color: white;
+}
+
+.switch-language a:hover {
+    font-weight: bold;
+}
+
 .brand-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
     padding: 1rem 3rem;
